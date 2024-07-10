@@ -37,8 +37,19 @@ require("lazy").setup({
       'nvim-telescope/telescope.nvim', tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
+    {
+      'nvim-telescope/telescope-ui-select.nvim'
+    },
     -- tree-sitter - https://github.com/nvim-treesitter/nvim-treesitter
     {"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"},
+    -- LSP Package Manager - https://github.com/williamboman/mason.nvim
+    -- LSP Mason + Config Bridge - https://github.com/williamboman/mason-lspconfig.nvim
+    -- LSP Client Config - https://github.com/neovim/nvim-lspconfig
+    {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+    }
   },
   -- automatically check for plugin updates
   checker = { enabled = true },
@@ -49,6 +60,16 @@ require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
 
 -- Telescope - https://github.com/nvim-telescope/telescope.nvim
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
+    }
+  }
+}
+-- To get ui-select loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require("telescope").load_extension("ui-select")
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
@@ -61,5 +82,21 @@ configs.setup({
   ensure_installed = { "lua", "vim", "javascript", "html", "go" },
   sync_install = false,
   highlight = { enable = true },
-  indent = { enable = true },  
+  indent = { enable = true }, 
 })
+
+-- LSP Package Manager - https://github.com/williamboman/mason.nvim
+require("mason").setup()
+-- LSP Languages - https://github.com/williamboman/mason-lspconfig.nvim?tab=readme-ov-file#available-lsp-servers
+require("mason-lspconfig").setup({
+  ensure_installed = { "lua_ls", "gopls" }
+})
+
+-- LSP Client Config - https://github.com/neovim/nvim-lspconfig
+local lspconfig = require("lspconfig")
+lspconfig.lua_ls.setup({})
+lspconfig.gopls.setup({})
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
+vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, {})
+
