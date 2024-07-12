@@ -18,6 +18,7 @@ Configuration for nvim
 - [catppuccin](https://github.com/catppuccin/nvim) - Default
 
 ## Plugins
+- [nvim-neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [telescope-ui-select](https://github.com/nvim-telescope/telescope-ui-select.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
