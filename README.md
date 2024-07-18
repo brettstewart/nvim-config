@@ -25,3 +25,5 @@ Configuration for nvim
 - [mason](https://github.com/williamboman/mason.nvim)
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
+- [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
+- [vim-fugitive](https://github.com/tpope/vim-fugitive)
