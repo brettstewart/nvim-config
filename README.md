@@ -27,3 +27,7 @@ Configuration for nvim
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+- [github-copilot](https://github.com/github/copilot.vim)
+
+## GitHub Copilot
+Run `:Copilot setup` to sync GitHub Copilot with your GitHub account.
