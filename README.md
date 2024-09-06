@@ -28,6 +28,7 @@ Configuration for nvim
 - [gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 - [github-copilot](https://github.com/github/copilot.vim)
+- [conform](https://github.com/stevearc/conform.nvim)
 
 ## GitHub Copilot
 Run `:Copilot setup` to sync GitHub Copilot with your GitHub account.
