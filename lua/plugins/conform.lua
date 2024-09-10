@@ -5,7 +5,12 @@ return {
     config = function()
       require("conform").setup({
         formatters_by_ft = {
-          go = { "gofmt" },
+          -- default to prettier for all filetypes unless specified
+          ["_"]     = { "prettier" },
+          go        = { "goimports", "gofmt" },
+          rust      = { "rustfmt" },
+          sh        = { "shfmt", "shellcheck" },
+          terraform = { "terraform_fmt" },
         },
         format_on_save = {
           -- These options will be passed to conform.format()

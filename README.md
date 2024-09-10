@@ -4,6 +4,8 @@ Configuration for nvim
 ## Prerequisites
 - [neovim](https://github.com/neovim/neovim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [shellcheck](https://github.com/koalaman/shellcheck)
+- [shfmt](https://github.com/mvdan/sh)
 
 
 ## Install
