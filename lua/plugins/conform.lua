@@ -11,6 +11,8 @@ return {
           rust      = { "rustfmt" },
           sh        = { "shfmt", "shellcheck" },
           terraform = { "terraform_fmt" },
+          yaml      = { "yq" },
+          json      = { "jq" },
         },
         format_on_save = {
           -- These options will be passed to conform.format()

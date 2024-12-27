@@ -4,8 +4,15 @@ Configuration for nvim
 ## Prerequisites
 - [neovim](https://github.com/neovim/neovim)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [shellcheck](https://github.com/koalaman/shellcheck)
+
+### LSP
+- [yamlls](https://github.com/redhat-developer/yaml-language-server)
 - [shfmt](https://github.com/mvdan/sh)
+
+### Formatters
+- [shellcheck](https://github.com/koalaman/shellcheck)
+- [jq](https://github.com/jqlang/jq)
+- [yq](https://github.com/mikefarah/yq)
 
 
 ## Install
